@@ -16,6 +16,8 @@
     </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ChatAbruti.js"></script>
+<script src="HiddenSnake/snake.js"></script>
 </body>
 </html>
