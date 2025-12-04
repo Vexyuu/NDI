@@ -1,8 +1,6 @@
 <?php
 // header.php
-// En-tête HTML commun à toutes les pages
 
-// Optionnel : variables de contexte (titre de page par exemple)
 if (!isset($pageTitle)) {
     $pageTitle = "Le Village Numérique Résistant - Nuit de l'Info 2025";
 }
@@ -20,7 +18,6 @@ if (!isset($pageTitle)) {
 <header class="site-header">
     <div class="header-inner">
         <div class="logo-zone">
-            <!-- Remplace les src par tes vraies images -->
             <img src="assets/images/logo-nird.png" alt="NIRD" class="logo">
             <div class="site-title">
                 <h1>Le Village Numérique Résistant</h1>
@@ -32,6 +29,7 @@ if (!isset($pageTitle)) {
             <a href="#scenarios">Scénarios</a>
             <a href="#score">Score NIRD</a>
             <a href="#about">À propos</a>
+            <a href="defis/defi1.php">Défis</a> <!-- futur lien vers tes défis -->
         </nav>
     </div>
 </header>

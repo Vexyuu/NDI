@@ -1,54 +1,6 @@
 // main.js
 
-// Données de scénarios (démo simple)
-// À terme, vous pourrez générer ça en PHP (JSON) depuis data.php
-const scenarios = [
-    {
-        id: 'materiel_obsolete',
-        title: 'Matériel obsolète ?',
-        description:
-            "Ton établissement dispose d'un parc de 50 PC sous Windows 10. Le support s'arrête bientôt. Que fais-tu ?",
-        choices: [
-            {
-                id: 'bigtech',
-                text: 'Tout remplacer par des PC neufs sous Windows 11.',
-                impactScore: -20,
-                feedback:
-                    "Tu restes très dépendant à un fournisseur unique, le coût est élevé et l’impact environnemental est fort."
-            },
-            {
-                id: 'nird',
-                text: 'Tester Linux sur les PC encore fonctionnels et réemployer le matériel.',
-                impactScore: +30,
-                feedback:
-                    'Bravo ! Tu prolonges la durée de vie du matériel, réduis les coûts et fais un pas vers plus de souveraineté.'
-            }
-        ]
-    },
-    {
-        id: 'donnees_cloud',
-        title: 'Données et cloud',
-        description:
-            "Les élèves et les enseignant·e·s stockent leurs documents sur un cloud américain grand public.",
-        choices: [
-            {
-                id: 'status_quo',
-                text: "Continuer comme ça, tout le monde a l'habitude.",
-                impactScore: -10,
-                feedback:
-                    "Solution confortable mais problématique pour la souveraineté des données et le respect du RGPD."
-            },
-            {
-                id: 'cloud_souverain',
-                text: 'Migrer progressivement vers un cloud européen ou académique basé sur des logiciels libres.',
-                impactScore: +25,
-                feedback:
-                    "Très bon choix : tu améliores la maîtrise des données et encourages les communs numériques éducatifs."
-            }
-        ]
-    }
-];
-
+let scenarios = [];
 let currentScenarioIndex = 0;
 let score = 0;
 let hasAnsweredCurrent = false;
@@ -58,7 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevScenarioBtn');
     const nextBtn = document.getElementById('nextScenarioBtn');
 
+    // Charger les scénarios depuis data.php (JSON)
+    fetch('data.php')
+        .then((response) => response.json())
+        .then((data) => {
+            scenarios = data;
+            updateNavButtons();
+        })
+        .catch((err) => {
+            console.error('Erreur lors du chargement des scénarios :', err);
+            const container = document.getElementById('scenarioContainer');
+            if (container) {
+                container.innerHTML =
+                    '<p class="placeholder">Impossible de charger les scénarios. Vérifie data.php.</p>';
+            }
+        });
+
     startBtn?.addEventListener('click', () => {
+        if (!scenarios.length) return;
         currentScenarioIndex = 0;
         score = 0;
         hasAnsweredCurrent = false;
@@ -92,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderScenario() {
     const container = document.getElementById('scenarioContainer');
-    if (!container) return;
+    if (!container || !scenarios.length) return;
 
     const scenario = scenarios[currentScenarioIndex];
     container.innerHTML = '';
@@ -108,7 +77,7 @@ function renderScenario() {
     const choicesList = document.createElement('div');
     choicesList.className = 'choices-list';
 
-    scenario.choices.forEach(choice => {
+    scenario.choices.forEach((choice) => {
         const btn = document.createElement('button');
         btn.className = 'btn secondary-btn choice-btn';
         btn.textContent = choice.text;
@@ -130,8 +99,7 @@ function handleChoice(choice) {
     if (hasAnsweredCurrent) return; // empêche de cliquer plusieurs fois
 
     score += choice.impactScore;
-    // clamp du score entre 0 et 100
-    score = Math.max(0, Math.min(score, 100));
+    score = Math.max(0, Math.min(score, 100)); // clamp 0–100
     hasAnsweredCurrent = true;
 
     const feedbackEl = document.getElementById('choiceFeedback');
@@ -167,6 +135,12 @@ function updateScoreDisplay() {
 function updateNavButtons() {
     const prevBtn = document.getElementById('prevScenarioBtn');
     const nextBtn = document.getElementById('nextScenarioBtn');
+
+    if (!scenarios.length) {
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        return;
+    }
 
     if (prevBtn) prevBtn.disabled = currentScenarioIndex === 0;
     if (nextBtn) nextBtn.disabled = currentScenarioIndex === scenarios.length - 1;

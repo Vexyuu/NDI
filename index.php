@@ -1,6 +1,5 @@
 <?php
 // index.php
-
 $pageTitle = "Le Village Numérique Résistant - Accueil";
 include 'templates/header.php';
 ?>
@@ -29,11 +28,11 @@ include 'templates/header.php';
         <h2>Scénarios NIRD</h2>
         <p class="section-description">
             Chaque scénario représente une situation concrète dans un établissement (matériel obsolète, logiciels,
-            stockage des données, etc.). Fais tes choix et observe l'impact sur le score de résistance numérique.
+            stockage des données, sobriété numérique, etc.). Fais tes choix et observe l'impact sur le score
+            de résistance numérique.
         </p>
 
         <div id="scenarioContainer" class="scenario-container">
-            <!-- Le scénario courant sera injecté ici en JS -->
             <p class="placeholder">
                 Clique sur <strong>Commencer l'expérience</strong> pour découvrir le premier scénario.
             </p>
@@ -74,22 +73,19 @@ include 'templates/header.php';
     <div class="section-inner">
         <h2>À propos de la démarche NIRD</h2>
         <p>
-            La démarche <strong>NIRD (Numérique Inclusif, Responsable et Durable)</strong> vise à aider les
-            établissements
+            La démarche <strong>NIRD (Numérique Inclusif, Responsable et Durable)</strong> vise à aider les établissements
             scolaires à reprendre la main sur leur environnement numérique : sobriété, réemploi, logiciels libres,
             souveraineté des données, co-construction de communs numériques éducatifs, etc.
         </p>
         <p>
-            Cette application ne se veut pas exhaustive mais propose une porte d'entrée ludique pour comprendre les
-            enjeux
+            Cette application propose une porte d'entrée ludique pour comprendre les enjeux
             et imaginer un plan d'action concret pour ton établissement.
         </p>
         <p class="note">
-            Pendant la Nuit de l'Info, n'hésite pas à échanger avec les membres du collectif NIRD pour approfondir
-            certains
+            Pendant la Nuit de l'Info, n'hésite pas à échanger avec les membres du collectif NIRD pour approfondir certains
             aspects ou vérifier la pertinence de tes scénarios.
         </p>
-    </p>
+    </div>
 </section>
 
 <?php

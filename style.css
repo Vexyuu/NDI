@@ -161,6 +161,10 @@ body {
     min-height: 150px;
 }
 
+.placeholder {
+    color: #9ca3af;
+}
+
 .scenario-title {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
