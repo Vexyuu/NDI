@@ -29,7 +29,7 @@ if (!isset($pageTitle)) {
             <a href="#scenarios">Scénarios</a>
             <a href="#score">Score NIRD</a>
             <a href="#about">À propos</a>
-            <a href="defis/defi1.php">Défis</a> <!-- futur lien vers tes défis -->
+            <a href="HiddenSnake/snake.html">Snake</a> <!-- futur lien vers tes défis -->
         </nav>
     </div>
 </header>
