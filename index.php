@@ -21,6 +21,163 @@ include 'templates/header.php';
             Commencer l'expérience
         </button>
     </div>
+    
+    <!-- Ajouter après la section #intro -->
+<section id="village-map" class="section village-section">
+    <div class="section-inner">
+        <h2>Explore le Village Numérique Résistant</h2>
+        <p class="section-description">
+            Chaque lieu du village représente un pilier de la résistance numérique. 
+            Clique sur les bâtiments pour découvrir les enjeux et solutions NIRD.
+        </p>
+        
+        <div class="village-map">
+            <div class="village-building" data-building="materiel">
+                <img src="assets/images/forge.svg" alt="La Forge">
+                <h3>🔨 La Forge</h3>
+                <p>Réemploi & Matériel</p>
+            </div>
+            
+            <div class="village-building" data-building="logiciels">
+                <img src="assets/images/bibliotheque.svg" alt="La Bibliothèque">
+                <h3>📚 La Bibliothèque</h3>
+                <p>Logiciels Libres</p>
+            </div>
+            
+            <div class="village-building" data-building="donnees">
+                <img src="assets/images/grenier.svg" alt="Le Grenier">
+                <h3>🏛️ Le Grenier</h3>
+                <p>Souveraineté des Données</p>
+            </div>
+            
+            <div class="village-building" data-building="communs">
+                <img src="assets/images/place.svg" alt="La Place">
+                <h3>🏘️ La Place</h3>
+                <p>Communs Numériques</p>
+            </div>
+            
+            <div class="village-building" data-building="sobriete">
+                <img src="assets/images/druide.svg" alt="L'Atelier">
+                <h3>🌿 L'Atelier du Druide</h3>
+                <p>Sobriété Numérique</p>
+            </div>
+        </div>
+        
+        <!-- Modal pour afficher les détails de chaque bâtiment -->
+        <div id="village-modal" class="village-modal" aria-hidden="true">
+            <div class="village-modal-content">
+                <button class="village-modal-close" aria-label="Fermer">&times;</button>
+                <h3 id="village-modal-title"></h3>
+                <p id="village-modal-text"></p>
+                <ul id="village-modal-actions" class="village-modal-actions"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="comparaison" class="section comparison-section">
+    <div class="section-inner">
+        <h2>Big Tech vs Village NIRD : Le Match</h2>
+        <p class="section-description">
+            Les établissements scolaires sont souvent coincés entre des solutions clés en main des Big Tech
+            et des alternatives plus autonomes mais moins connues.
+            Voici une comparaison concrète pour t’aider à visualiser la différence.
+        </p>
+
+        <div class="comparison-toggle">
+            <button id="comparisonToggleBtn" class="btn secondary-btn">
+                Voir la version détaillée
+            </button>
+        </div>
+
+        <div id="comparisonTable" class="comparison-table">
+            <div class="comparison-header">
+                <div class="comparison-col comparison-col--critere">Critère</div>
+                <div class="comparison-col comparison-col--bigtech">🏢 Empire Big Tech</div>
+                <div class="comparison-col comparison-col--nird">🛡️ Village NIRD</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Coût licences (50 postes)</strong>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    15 000€ / an en licences et abonnements 💸
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    ≈ 0€ en licences (logiciels libres) ✅
+                </div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Durée de vie du matériel</strong>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    3–4 ans, renouvellement fréquent (obsolescence programmée) ⚠️
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    7–10 ans grâce au réemploi et à Linux ♻️
+                </div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Localisation des données</strong>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    Data centers mondiaux, souvent hors UE 🌍
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    Cloud académique ou européen, RGPD-friendly 🇪🇺
+                </div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Autonomie de l'établissement</strong>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    Forte dépendance à un fournisseur unique 🔒
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    Capacité à choisir, adapter et contribuer 🔓
+                </div>
+            </div>
+
+            <div class="comparison-row comparison-row--extra detailed-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Impact écologique</strong><br>
+                    <span class="comparison-hint">(renouvellement, data, vidéos…)</span>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    Élevé : renouvellement de masse, streaming intensif, centres de données peu transparents 🔥
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    Réduit : réemploi, sobriété numérique, mutualisation des ressources 🌱
+                </div>
+            </div>
+
+            <div class="comparison-row comparison-row--extra detailed-row">
+                <div class="comparison-col comparison-col--critere">
+                    <strong>Pérennité des outils</strong>
+                </div>
+                <div class="comparison-col comparison-col--bigtech">
+                    Dépend du business model des Big Tech (fermeture de services, changements forcés) 🎲
+                </div>
+                <div class="comparison-col comparison-col--nird">
+                    Basé sur des standards ouverts, des communautés, des communs numériques 🤝
+                </div>
+            </div>
+        </div>
+
+        <p class="comparison-note">
+            Les chiffres sont donnés à titre indicatif pour illustrer les ordres de grandeur. 
+            L’objectif est de montrer l’intérêt de <strong>penser autrement</strong> les choix numériques 
+            d’un établissement, au-delà de la seule habitude ou de la solution la plus visible.
+        </p>
+    </div>
+</section>
 
     <!-- Chat'bruti Widget -->
     <div id="chatabruti-icon" class="chatabruti-icon">

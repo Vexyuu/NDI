@@ -21,6 +21,7 @@ if (!isset($pageTitle)) {
     <link rel="stylesheet" href="<?= $rootPath ?>styles/HiddenSnake.css">
     <link rel="stylesheet" href="<?= $rootPath ?>styles/ChatAbruti.css">
     <link rel="stylesheet" href="<?= $rootPath ?>styles/snake.css">
+    <link rel="stylesheet" href="<?= $rootPath ?>styles/village.css">
     <link rel="stylesheet" href="<?= $rootPath ?>styles/theme.css">
 </head>
 <body>
@@ -28,7 +29,7 @@ if (!isset($pageTitle)) {
     <div class="header-inner">
         <div class="header-wrapper">
             <div class="logo-zone">
-                <img src="<?= $rootPath ?>assets/images/logo-nird.png" alt="NIRD" class="logo">
+                <img src="<?= $rootPath ?>assets/images/logo.webp" alt="NIRD" class="logo">
                 <div class="site-title">
                     <h1>Le Village Numérique Résistant</h1>
                     <p class="subtitle">Comment les établissements scolaires peuvent tenir tête aux Big Tech ?</p>

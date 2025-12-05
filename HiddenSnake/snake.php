@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "Snake - Le Village NIRD";
+$rootPath = '../';
 include '../templates/header.php';
 ?>
 <div id="snakeContainer">

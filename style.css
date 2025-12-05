@@ -6,6 +6,12 @@
 /* Importer les styles du Chat'bruti */
 @import url('styles/ChatAbruti.css');
 
+/* Importer les styles du QCM */
+@import url('styles/QCM.css');
+
+/* Importer les styles du Village */
+@import url('styles/village.css');
+
 /* 
    NOTES D'ARCHITECTURE CSS:
    ========================

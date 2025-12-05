@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("snakeCanvas");
+    // Si on n'est pas sur la page Snake, ne rien faire
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
     const grid = 20;
 
