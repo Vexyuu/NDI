@@ -1,65 +1,326 @@
-/* Chat'bruti styles */
+/* Chat'bruti Widget Styles - THE ABSURD CHATBOT */
 
-#chatabruti-icon {
-    transition: transform 0.2s;
+/* Icon */
+.chatabruti-icon {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: bounce 2s infinite;
 }
-#chatabruti-icon:hover {
-    transform: scale(1.08) rotate(-8deg);
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
-#chatabruti-window {
-    font-family: 'Comic Sans MS', 'Arial', sans-serif;
-    animation: chatabruti-pop 0.3s;
+
+.chatabruti-icon:hover {
+    transform: scale(1.15) rotate(15deg) !important;
+    animation: none;
 }
-@keyframes chatabruti-pop {
-    0% { transform: scale(0.7); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+
+.chatabruti-icon img {
+    width: 120px;
+    height: 120px;
+    border-radius: 0;
+    border: 6px solid #ff6b9d;
+    box-shadow: 0 0 30px rgba(255, 107, 157, 0.6), 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 107, 157, 0.2);
+    display: block;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
 }
-#chatabruti-messages {
-    scrollbar-width: thin;
-    scrollbar-color: #6c47a6 #f7f3ff;
+
+.chatabruti-icon:hover img {
+    filter: brightness(1.2) saturate(1.3);
+    box-shadow: 0 0 40px rgba(255, 107, 157, 0.8), 0 12px 24px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(255, 107, 157, 0.3);
 }
-#chatabruti-messages::-webkit-scrollbar {
-    width: 6px;
+
+/* Chat Window */
+.chatabruti-window {
+    position: fixed;
+    bottom: 150px;
+    right: 32px;
+    width: 420px;
+    max-width: 95vw;
+    max-height: 600px;
+    background: #ffffff;
+    border-radius: 0;
+    border: 6px solid #ff6b9d;
+    box-shadow: 
+        0 0 30px rgba(255, 107, 157, 0.4),
+        0 12px 24px rgba(0, 0, 0, 0.15),
+        inset 0 0 20px rgba(255, 107, 157, 0.1);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: chatabruti-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#chatabruti-messages::-webkit-scrollbar-thumb {
-    background: #6c47a6;
-    border-radius: 3px;
-}
-#chatabruti-form input:focus {
-    outline: 2px solid #6c47a6;
-}
-#chatabruti-form button:active {
-    background: #4b2e7a;
-}
-/* Messages */
-.chatabruti-msg {
-    margin-bottom: 8px;
+
+.chatabruti-window.active {
     display: flex;
-    align-items: flex-start;
 }
+
+@keyframes chatabruti-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.3) translateY(40px) rotateZ(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0) rotateZ(0deg);
+    }
+}
+
+/* Header */
+.chatabruti-header {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff1654 50%, #ffa500 100%);
+    color: #ffffff;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-bottom: 4px solid #ff1654;
+    box-shadow: 0 4px 8px rgba(255, 107, 157, 0.3);
+}
+
+.chatabruti-title {
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chatabruti-close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.chatabruti-close-btn:hover {
+    transform: rotate(90deg) scale(1.2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.chatabruti-close-btn:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* Messages Container */
+.chatabruti-messages {
+    flex: 1;
+    padding: 16px;
+    background: linear-gradient(180deg, #fff5f9 0%, #f0e6ff 100%);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+    max-height: 380px;
+}
+
+.chatabruti-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatabruti-messages::-webkit-scrollbar-track {
+    background: #f0e6ff;
+}
+
+.chatabruti-messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff6b9d 0%, #ff1654 100%);
+    border-radius: 4px;
+}
+
+.chatabruti-messages::-webkit-scrollbar-thumb:hover {
+    background: #ff1654;
+}
+
+/* Message Bubbles */
+.chatabruti-msg {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scaleX(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleX(1);
+    }
+}
+
 .chatabruti-msg.user {
     justify-content: flex-end;
 }
-.chatabruti-msg .bubble {
-    padding: 8px 14px;
-    border-radius: 16px;
-    max-width: 80%;
-    word-break: break-word;
-    color: inherit !important;
+
+.chatabruti-bubble {
+    max-width: 78%;
+    padding: 12px 16px;
+    border-radius: 0;
+    border: 3px solid #ff6b9d;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
 }
-.chatabruti-msg.user .bubble {
-    background: #e0d7f7;
-    color: #111827 !important;
-    margin-left: auto;
+
+.chatabruti-msg.user .chatabruti-bubble {
+    background: linear-gradient(135deg, #ffd89b 0%, #ffb347 100%);
+    color: #1a1a1a;
+    border-color: #ff8c42;
+    box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
 }
-.chatabruti-msg.user .bubble * {
-    color: #111827 !important;
+
+.chatabruti-msg.bot .chatabruti-bubble {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff1654 100%);
+    color: #ffffff;
+    border-color: #ff1654;
+    box-shadow: 0 4px 12px rgba(255, 22, 84, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-.chatabruti-msg.bot .bubble {
-    background: #6c47a6;
-    color: #e5e7eb !important;
-    margin-right: auto;
+
+/* Form */
+.chatabruti-form {
+    display: flex;
+    border-top: 4px solid #ff6b9d;
+    background: #ffffff;
+    flex-shrink: 0;
+    gap: 0;
 }
-.chatabruti-msg.bot .bubble * {
-    color: #e5e7eb !important;
+
+.chatabruti-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    font-weight: 500;
 }
+
+.chatabruti-input::placeholder {
+    color: #d0a8d0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.chatabruti-input:focus {
+    background: linear-gradient(180deg, #fff9fb 0%, #f5f0ff 100%);
+    box-shadow: inset 0 0 10px rgba(255, 107, 157, 0.1);
+}
+
+.chatabruti-submit {
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff1654 100%);
+    color: #ffffff;
+    border: none;
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 8px rgba(255, 107, 157, 0.3);
+}
+
+.chatabruti-submit:hover {
+    background: linear-gradient(135deg, #ff8ab6 0%, #ff3472 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 157, 0.4);
+}
+
+.chatabruti-submit:active {
+    background: #ff1654;
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(255, 22, 84, 0.3);
+}
+
+.chatabruti-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .chatabruti-window {
+        bottom: 140px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+        max-width: calc(100vw - 32px);
+        max-height: 70vh;
+    }
+
+    .chatabruti-messages {
+        max-height: 50vh;
+    }
+
+    .chatabruti-icon {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .chatabruti-icon img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .chatabruti-bubble {
+        max-width: 85%;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .chatabruti-window {
+        background: #1a1a1a;
+        border-color: #ff6b9d;
+    }
+
+    .chatabruti-messages {
+        background: linear-gradient(180deg, #2a1a2a 0%, #1a1a3a 100%);
+    }
+
+    .chatabruti-input {
+        background: #2a2a2a;
+        color: #ffffff;
+    }
+
+    .chatabruti-input:focus {
+        background: linear-gradient(180deg, #3a2a3a 0%, #2a2a4a 100%);
+    }
+
+    .chatabruti-input::placeholder {
+        color: #aa77aa;
+    }
+}
+

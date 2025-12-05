@@ -21,21 +21,27 @@ include 'templates/header.php';
             Commencer l'expérience
         </button>
     </div>
-    </div>
 
-    <!-- Chat'bruti -->
-    <div id="chatabruti-icon" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000; cursor: pointer;">
-        <img src="assets/images/chatabruti.png" alt="Chat'bruti" style="width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <!-- Chat'bruti Widget -->
+    <div id="chatabruti-icon" class="chatabruti-icon">
+        <img src="assets/images/chatBot.webp" alt="Chat'bruti">
     </div>
-    <div id="chatabruti-window" style="display: none; position: fixed; bottom: 100px; right: 32px; width: 320px; max-width: 90vw; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.2); z-index: 1001; flex-direction: column; overflow: hidden;">
-        <div style="background: #6c47a6; color: #fff; padding: 12px 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between;">
-            <span>Chat'bruti 🤪</span>
-            <button id="chatabruti-close" style="background: none; border: none; color: #fff; font-size: 20px; cursor: pointer;">&times;</button>
+    <div id="chatabruti-window" class="chatabruti-window">
+        <div class="chatabruti-header">
+            <span class="chatabruti-title">Chat'bruti 🤪</span>
+            <button id="chatabruti-close" class="chatabruti-close-btn">&times;</button>
         </div>
-        <div id="chatabruti-messages" style="padding: 12px 16px; height: 220px; overflow-y: auto; font-size: 15px; background: #f7f3ff;"></div>
-        <form id="chatabruti-form" style="display: flex; border-top: 1px solid #eee;">
-            <input id="chatabruti-input" type="text" placeholder="Pose ta question inutile..." autocomplete="off" style="flex: 1; padding: 10px; border: none; border-radius: 0 0 0 16px; font-size: 15px;">
-            <button type="submit" style="background: #6c47a6; color: #fff; border: none; padding: 0 18px; border-radius: 0 0 16px 0; font-size: 15px; cursor: pointer;">Envoyer</button>
+        <div id="chatabruti-messages" class="chatabruti-messages"></div>
+        <form id="chatabruti-form" class="chatabruti-form">
+            <input 
+                id="chatabruti-input" 
+                class="chatabruti-input" 
+                type="text" 
+                placeholder="Pose ta question inutile..." 
+                autocomplete="off"
+                aria-label="Message input"
+            >
+            <button type="submit" class="chatabruti-submit">Envoyer</button>
         </form>
     </div>
 </section>
