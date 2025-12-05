@@ -143,9 +143,9 @@ function makeAdvice(profil) {
 
   // Illustrations
   html += `<div class="images">
-    <img alt="Squat" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Air_Squat.gif">
-    <img alt="Pompes" src="https://upload.wikimedia.org/wikipedia/commons/9/94/Push_up.gif">
-    <img alt="Yoga Cobra" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Bhujangasana.gif">
+    <img alt="Squat" src="https://media.tenor.com/Pfj8vy41k-0AAAAM/gym.gif">
+    <img alt="Pompes" src="https://www.docteur-fitness.com/wp-content/uploads/2020/10/pompe-musculation.gif">
+    <img alt="Yoga Cobra" src="https://gymvisual.com/img/p/2/7/2/3/7/27237.gif">
   </div>`;
 
   // Products selection based on profile

@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Décathlon — Conseils personnalisés</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
+<?php
+$pageTitle = "Décathlon — Conseils personnalisés";
+$rootPath = '../';
+include __DIR__ . '/../templates/header.php';
+?>
+<div class="container">
     <header>
       <h1>Conseils personnalisés</h1>
       <p class="subtitle">Instructions, illustrations et produits</p>
     </header>
 
-    <main>
       <div id="dynamic" class="card">
-        <!-- Contenu généré par app.js -->
       </div>
 
       <div class="actions">
-        <a id="backBtn" class="btn outline" href="index.php">Modifier mon profil</a>
-        <a id="repoBtn" class="btn" href="#" title="Ajouter l'URL du repository">Voir le repo GitHub</a>
+        <a id="backBtn" class="btn outline" href="/NDI/QCM/qcm.php">Modifier mon profil</a>
+        <a class="btn outline" href="/NDI/#intro">Accueil</a>
       </div>
 
-    </main>
+    </div>
 
-    <footer>
-      <p>Bonne pratique : écoutez votre corps et demandez conseil à un professionnel en cas de douleur.</p>
-      <div class="footer-actions">
-        <label class="switch"><input id="themeToggleLevels" type="checkbox"><span class="slider"></span></label>
-        <small>Mode sombre</small>
-      </div>
-    </footer>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/../templates/footer.php'; ?>

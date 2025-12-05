@@ -20,14 +20,44 @@ L'application propose :
 
 ```text
 nuit-info-2025/
-├── index.php         # Page principale (sections : intro, scénarios, score, à propos)
-├── assets/
-│   ├── header.php    # En-tête commun (HTML, titre, navigation)
-│   └── footer.php    # Pied de page commun (licence, scripts)
-├── style.css         # Styles globaux (dark mode sobre, responsive)
-├── main.js           # Logique côté client (scénarios, score, feedback)
-├── data.php          # (Optionnel) Données des scénarios si générées en PHP
-├── assets/
-│   ├── images/       # Logos, illustrations libres de droit
-│   └── fonts/        # Polices utilisées (libres de droit)
-└── README.md         # Ce fichier
+
+
+
+
+
+
+
+          
+├── NDI/
+    ├── assets/
+    │   ├── images/       # Logos, illustrations libres de droit
+    │      ├── chatBot.webp      
+    ├── CarteTalents/
+    │   └── CarteTalent.php
+    ├── ChatAbruti/
+    │   └── ChatAbrutiREADME.md  
+    ├── HiddenSnake/ 
+    │   ├── snake.php 
+    ├── js/
+    │   ├── ChatAbruti.js 
+    │   ├── main.js       # Logique côté client (scénarios, score, feedback)
+    │   ├── qcm.js
+    │   ├── snake.js
+    │   ├── theme-ui.js
+    │   ├── theme.js
+    ├── QCM/ 
+        │   ├── levels.php
+    │   ├── qcm.php 
+    ├── styles/
+    │   ├── CarteTalent.css 
+    │   ├── ChatAbruti.css 
+    │   ├── qcm.css
+    │   ├── snake.css
+    │   ├── theme.css 
+    ├── templates/        
+    │   ├── footer.php    # Pied de page commun (licence, scripts)
+    │   └── header.php    # En-tête commun (HTML, titre, navigation)
+    ├── data.php          # (Optionnel) Données des scénarios si générées en PHP
+    ├── index.php         # Page principale (sections : intro, scénarios, score, à propos)
+    ├── README.md         # Ce fichier
+    ├── style.css         # Styles globaux (dark mode sobre, responsive)

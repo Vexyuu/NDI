@@ -1,8 +1,6 @@
 <?php
 include '../templates/header.php';
 ?>
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../styles/snake.css">
 <div id="snakeContainer">
     <div id="snakeUI">
         <div class="scores">
@@ -13,8 +11,6 @@ include '../templates/header.php';
         <canvas id="snakeCanvas" width="400" height="400"></canvas>
     </div>
 </div>
-
-<script src="../js/snake.js"></script>
 
 <?php
 include '../templates/footer.php';

@@ -16,6 +16,17 @@
     </div>
 </footer>
 
+<!-- Theme Scripts -->
+<script src="<?= $rootPath ?? '' ?>js/theme.js"></script>
+<script src="<?= $rootPath ?? '' ?>js/theme-ui.js"></script>
+
+<!-- Feature Scripts -->
+<script src="<?= $rootPath ?? '' ?>js/main.js"></script>
+<script src="<?= $rootPath ?? '' ?>js/qcm.js"></script>
+<script src="<?= $rootPath ?? '' ?>js/snake.js"></script>
+<script src="<?= $rootPath ?? '' ?>js/ChatAbruti.js"></script>
+
+<!-- Konami Code -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const konamiCode = [
@@ -32,15 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
             kPos++;
             if (kPos === konamiCode.length) {
                 // Redirection vers la page du jeu
-                window.location.href = "HiddenSnake/snake.php";
+                window.location.href = "<?= $rootPath ?? '' ?>HiddenSnake/snake.php";
                 kPos = 0;
             }
         } else kPos = 0;
     });
 });
 </script>
-
-<script src="js/main.js"></script>
-<script src="js/ChatAbruti.js"></script>
 </body>
 </html>

@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Décathlon — QCM Profil Sportif</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="../js/theme.js" defer></script>
-  <script src="../js/theme-ui.js" defer></script>
-</head>
-<body>
-  <div class="container">
+<?php
+$pageTitle = "Décathlon — QCM Profil Sportif";
+$rootPath = '../';
+include __DIR__ . '/../templates/header.php';
+?>
+<div class="container">
     <header>
       <h1>Devenez le CTO de Votre Santé Posturale</h1>
       <p class="subtitle">Profilage sportif — Niveau 1</p>
     </header>
 
-    <main>
       <form id="qcmForm" class="card" autocomplete="off">
         <section>
           <h2>Niveau sportif</h2>
@@ -55,18 +47,6 @@
         <p>Génération des recommandations...</p>
       </div>
 
-    </main>
+    </div>
 
-    <footer>
-      <p>Projet Nuit de l'Info — Décathlon Digital</p>
-      <div class="footer-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" title="Basculer le thème" aria-label="Basculer le thème clair/sombre">
-          <span id="theme-icon">🌙</span>
-        </button>
-      </div>
-    </footer>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/../templates/footer.php'; ?>
