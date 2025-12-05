@@ -178,16 +178,17 @@
 }
 
 .comparison-col--critere {
-    background: rgba(15, 23, 42, 0.95);
+    background: var(--comparison-critere-bg, rgba(15, 23, 42, 0.95));
     font-weight: 600;
 }
 
 .comparison-col--bigtech {
-    background: rgba(127, 29, 29, 0.35); /* rouge sombre léger */
+    background: var(--comparison-bigtech-bg, rgba(127, 29, 29, 0.35));
+
 }
 
 .comparison-col--nird {
-    background: rgba(22, 101, 52, 0.35); /* vert sombre léger */
+    background: var(--comparison-nird-bg, rgba(22, 101, 52, 0.35));
 }
 
 .comparison-header .comparison-col {
@@ -215,6 +216,15 @@
 /* Lignes détaillées (affichées/masquées via JS) */
 .detailed-row {
     display: contents; /* visible par défaut, mais on va les cacher en JS au chargement */
+}
+
+/* Permet de masquer proprement les lignes détaillées même si display: contents est utilisé */
+.detailed-row.hidden {
+    display: none !important;
+}
+/* Assurer le masquage des cellules enfants quand la ligne est cachée */
+.detailed-row.hidden .comparison-col {
+    display: none !important;
 }
 
 @media (max-width: 900px) {

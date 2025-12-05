@@ -275,13 +275,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let showDetailed = false;
 
-    // Cacher les lignes détaillées au chargement
+    // Cacher les lignes détaillées au chargement en ajoutant la classe `hidden`
     detailedRows.forEach((row) => {
-        // Comme on utilise display: contents, on cible les children
-        row.querySelectorAll(".comparison-col").forEach((col) => {
-            col.style.display = "none";
-        });
+        row.classList.add('hidden');
     });
+
+    console.debug('Comparison toggle init:', { toggleBtnExists: !!toggleBtn, detailedCount: detailedRows.length });
 
     const updateToggleLabel = () => {
         toggleBtn.textContent = showDetailed
@@ -293,10 +292,16 @@ document.addEventListener("DOMContentLoaded", () => {
         showDetailed = !showDetailed;
 
         detailedRows.forEach((row) => {
-            row.querySelectorAll(".comparison-col").forEach((col) => {
-                col.style.display = showDetailed ? "block" : "none";
-            });
+            if (showDetailed) row.classList.remove('hidden');
+            else row.classList.add('hidden');
         });
+
+        // Accessibilité: indiquer l'état
+        try {
+            toggleBtn.setAttribute('aria-expanded', String(showDetailed));
+        } catch (e) { /* silent */ }
+
+        console.debug('Comparison toggle clicked, showDetailed=', showDetailed);
 
         updateToggleLabel();
     });
