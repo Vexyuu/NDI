@@ -17,9 +17,9 @@ include 'templates/header.php';
             numériques de ton établissement, en suivant la démarche
             <strong>NIRD : Numérique Inclusif, Responsable et Durable</strong>.
         </p>
-        <button id="startExperienceBtn" class="btn primary-btn">
+        <a href="#scenarios" id="startExperienceBtn" class="btn primary-btn" style="text-decoration: none;">
             Commencer l'expérience
-        </button>
+        </a>
     </div>
     
     <!-- Ajouter après la section #intro -->
@@ -33,31 +33,26 @@ include 'templates/header.php';
         
         <div class="village-map">
             <div class="village-building" data-building="materiel">
-                <img src="assets/images/forge.svg" alt="La Forge">
                 <h3>🔨 La Forge</h3>
                 <p>Réemploi & Matériel</p>
             </div>
             
             <div class="village-building" data-building="logiciels">
-                <img src="assets/images/bibliotheque.svg" alt="La Bibliothèque">
                 <h3>📚 La Bibliothèque</h3>
                 <p>Logiciels Libres</p>
             </div>
             
             <div class="village-building" data-building="donnees">
-                <img src="assets/images/grenier.svg" alt="Le Grenier">
                 <h3>🏛️ Le Grenier</h3>
                 <p>Souveraineté des Données</p>
             </div>
             
             <div class="village-building" data-building="communs">
-                <img src="assets/images/place.svg" alt="La Place">
                 <h3>🏘️ La Place</h3>
                 <p>Communs Numériques</p>
             </div>
             
             <div class="village-building" data-building="sobriete">
-                <img src="assets/images/druide.svg" alt="L'Atelier">
                 <h3>🌿 L'Atelier du Druide</h3>
                 <p>Sobriété Numérique</p>
             </div>

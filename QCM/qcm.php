@@ -5,6 +5,7 @@ include __DIR__ . '/../templates/header.php';
 ?>
 <div class="container">
     <header>
+      <img src="https://societeamission.com/wp-content/uploads/2020/09/logo-decathlon.png" alt="Décathlon1" style="height:60px; display:block; margin:auto;">
       <h1>Devenez le CTO de Votre Santé Posturale</h1>
       <p class="subtitle">Profilage sportif — Niveau 1</p>
     </header>
