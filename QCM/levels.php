@@ -19,7 +19,7 @@
       </div>
 
       <div class="actions">
-        <a id="backBtn" class="btn outline" href="index.html">Modifier mon profil</a>
+        <a id="backBtn" class="btn outline" href="index.php">Modifier mon profil</a>
         <a id="repoBtn" class="btn" href="#" title="Ajouter l'URL du repository">Voir le repo GitHub</a>
       </div>
 

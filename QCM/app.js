@@ -77,7 +77,7 @@ if (qcmForm) {
     await new Promise(r => setTimeout(r, 650));
 
     // redirect to levels page
-    window.location.href = 'levels.html';
+    window.location.href = 'levels.php';
   });
 }
 
@@ -89,7 +89,7 @@ if (dynamic) {
   try { profil = JSON.parse(raw || 'null'); } catch (e) { profil = null; }
 
   if (!profil) {
-    dynamic.innerHTML = `<p>Profil introuvable — <a href="index.html">Retour au QCM</a></p>`;
+    dynamic.innerHTML = `<p>Profil introuvable — <a href="index.php">Retour au QCM</a></p>`;
   } else {
     dynamic.innerHTML = makeAdvice(profil);
 

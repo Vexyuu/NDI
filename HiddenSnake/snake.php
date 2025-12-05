@@ -1,20 +1,15 @@
 <?php
 include '../templates/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../styles/snake.css">
-</head>
-<body>
-
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../styles/snake.css">
 <div id="snakeContainer">
     <div id="snakeUI">
-        <p class="info">🎮 ZQSD pour bouger — Échap pour revenir à l'accueil</p>
+        <div class="scores">
+            <span id="scoreDisplay">Score: 0</span>
+            <span id="highScoreDisplay">Meilleur: 0</span>
+        </div>
+        <p class="info">🎮 ZQSD pour bouger — Espace = Rejouer — Échap = Quitter</p>
         <canvas id="snakeCanvas" width="400" height="400"></canvas>
     </div>
 </div>
@@ -24,5 +19,3 @@ include '../templates/header.php';
 <?php
 include '../templates/footer.php';
 ?>
-</body>
-</html>

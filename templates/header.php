@@ -30,7 +30,10 @@ if (!isset($pageTitle)) {
             <a href="#scenarios">Scénarios</a>
             <a href="#score">Score NIRD</a>
             <a href="#about">À propos</a>
-            <a href="HiddenSnake/snake.html">Snake</a> <!-- futur lien vers tes défis -->
+            <a href="HiddenSnake/snake.php">Snake</a> <!-- Hidden Snake -->
+            <a href="QCM/index.php">QCM</a> <!-- QCM Decathlon -->
+            <a href="CarteTalents/CarteTalent.php">Carte des Talents</a> <!-- Carte Talents -->
+
         </nav>
     </div>
 </header>
