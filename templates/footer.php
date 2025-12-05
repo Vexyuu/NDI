@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<script src="../js/main.js"></script>
-<script src="../js/ChatAbruti.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ChatAbruti.js"></script>
 </body>
 </html>
