@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateScore();
         highScoreDisplay.textContent = `Meilleur: ${highScore}`;
 
-        showMessage("🎉 Bienvenue au Snake secret ! 🐍", 2000);
+        showMessage("🎉 Bienvenue au Snake secret ! 🐍", 7000);
         requestAnimationFrame(loop);
     }
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             food = generateFood();
 
             // Augmenter la difficulté progressivement
-            if (score % 5 === 0 && speed > 60) {
+            if (score % 7 === 0 && speed > 60) {
                 speed -= 5;
                 showMessage("🏃 Plus rapide !", 800);
             }
@@ -193,23 +193,79 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // Snake avec dégradé
+
+        // Snake avec tête distinctive
         for (let i = 0; i < snake.length; i++) {
             const p = snake[i];
-            const opacity = 1 - (i / snake.length) * 0.5; // Dégradé de transparence
-            ctx.fillStyle = i === 0 ? "#00ffaa" : `rgba(0, 255, 136, ${opacity})`;
 
             if (i === 0) {
-                // Tête plus grosse et brillante
-                ctx.shadowBlur = 10;
+                // ---------- TÊTE DU SERPENT ----------
+                ctx.fillStyle = "#00ffaa";
+                ctx.shadowBlur = 15;
                 ctx.shadowColor = "#00ffaa";
+
+                // Corps de la tête (plus gros)
+                ctx.beginPath();
+                ctx.arc(p.x + grid / 2, p.y + grid / 2, grid / 2 - 1, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.shadowBlur = 0;
+
+                // Yeux
+                const eyeSize = 3;
+                const eyeOffset = 5;
+
+                // Positionner les yeux selon la direction
+                let eyeX1, eyeY1, eyeX2, eyeY2;
+
+                if (dx > 0) { // Droite
+                    eyeX1 = p.x + grid / 2 + 4;
+                    eyeY1 = p.y + grid / 2 - 4;
+                    eyeX2 = p.x + grid / 2 + 4;
+                    eyeY2 = p.y + grid / 2 + 4;
+                } else if (dx < 0) { // Gauche
+                    eyeX1 = p.x + grid / 2 - 4;
+                    eyeY1 = p.y + grid / 2 - 4;
+                    eyeX2 = p.x + grid / 2 - 4;
+                    eyeY2 = p.y + grid / 2 + 4;
+                } else if (dy > 0) { // Bas
+                    eyeX1 = p.x + grid / 2 - 4;
+                    eyeY1 = p.y + grid / 2 + 4;
+                    eyeX2 = p.x + grid / 2 + 4;
+                    eyeY2 = p.y + grid / 2 + 4;
+                } else { // Haut
+                    eyeX1 = p.x + grid / 2 - 4;
+                    eyeY1 = p.y + grid / 2 - 4;
+                    eyeX2 = p.x + grid / 2 + 4;
+                    eyeY2 = p.y + grid / 2 - 4;
+                }
+
+                // Dessiner les yeux blancs
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.arc(eyeX1, eyeY1, eyeSize, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(eyeX2, eyeY2, eyeSize, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Dessiner les pupilles noires
+                ctx.fillStyle = "black";
+                ctx.beginPath();
+                ctx.arc(eyeX1, eyeY1, eyeSize / 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(eyeX2, eyeY2, eyeSize / 2, 0, Math.PI * 2);
+                ctx.fill();
+
+            } else {
+                // ---------- CORPS DU SERPENT ----------
+                const opacity = 1 - (i / snake.length) * 0.5;
+                ctx.fillStyle = `rgba(0, 255, 136, ${opacity})`;
+                ctx.beginPath();
+                ctx.arc(p.x + grid / 2, p.y + grid / 2, grid / 2 - 2, 0, Math.PI * 2);
+                ctx.fill();
             }
-
-            ctx.beginPath();
-            ctx.arc(p.x + grid / 2, p.y + grid / 2, grid / 2 - 2, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.shadowBlur = 0;
         }
     }
 

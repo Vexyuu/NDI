@@ -1,0 +1,128 @@
+/* QCM.css - Styles pour le QCM */
+
+/* Importer d'abord les variables de thème */
+@import url('theme.css');
+
+/* Styles spécifiques au QCM */
+
+.qcm-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.qcm-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.qcm-header h1 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.qcm-header .subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.qcm-progress {
+    background: var(--bg-secondary);
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-primary);
+}
+
+.qcm-progress-bar {
+    background: linear-gradient(90deg, var(--color-success), var(--color-primary));
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.qcm-question {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.qcm-question h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.qcm-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qcm-option:hover {
+    border-color: var(--color-accent);
+    background: var(--bg-tertiary);
+}
+
+.qcm-option input[type="radio"],
+.qcm-option input[type="checkbox"] {
+    margin-right: 1rem;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.qcm-option label {
+    flex: 1;
+    color: var(--text-primary);
+    cursor: pointer;
+    user-select: none;
+}
+
+.qcm-option.selected {
+    background: color-mix(in srgb, var(--color-primary) 10%, var(--bg-primary));
+    border-color: var(--color-primary);
+}
+
+.qcm-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.qcm-result {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.qcm-result h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.qcm-result .score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.qcm-result p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}

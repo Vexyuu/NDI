@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Décathlon — QCM Profil Sportif</title>
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/theme-ui.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -57,8 +60,9 @@
     <footer>
       <p>Projet Nuit de l'Info — Décathlon Digital</p>
       <div class="footer-actions">
-        <label class="switch"><input id="themeToggleIndex" type="checkbox"><span class="slider"></span></label>
-        <small>Mode sombre</small>
+        <button id="theme-toggle" class="theme-toggle-btn" title="Basculer le thème" aria-label="Basculer le thème clair/sombre">
+          <span id="theme-icon">🌙</span>
+        </button>
       </div>
     </footer>
   </div>

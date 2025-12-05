@@ -1,0 +1,77 @@
+/* CarteTalents.css - Styles pour la page Carte des Talents */
+
+/* Importer d'abord les variables de thème */
+@import url('theme.css');
+
+/* Styles spécifiques à la page Carte des Talents */
+
+.carte-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.carte-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carte-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.carte-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.carte-description {
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.carte-skill-tag {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--bg-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin: 0.5rem 0.5rem 0 0;
+    font-weight: 500;
+}
+
+.carte-filters {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.carte-filter-btn {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.carte-filter-btn:hover,
+.carte-filter-btn.active {
+    background: var(--color-primary);
+    color: var(--bg-primary);
+    border-color: var(--color-primary);
+}
