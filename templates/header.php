@@ -46,7 +46,6 @@ if (!isset($pageTitle)) {
             <a href="/NDI/#scenarios">Scénarios</a>
             <a href="/NDI/#score">Score NIRD</a>
             <a href="/NDI/#about">À propos</a>
-            <a href="/NDI/HiddenSnake/snake.php">Snake</a> <!-- Hidden Snake -->
             <a href="/NDI/QCM/qcm.php">QCM</a> <!-- QCM Decathlon -->
             <a href="/NDI/CarteTalents/CarteTalent.php">Carte des Talents</a> <!-- Carte Talents -->
         </nav>

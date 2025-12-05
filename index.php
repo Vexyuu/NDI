@@ -17,7 +17,7 @@ include 'templates/header.php';
             numériques de ton établissement, en suivant la démarche
             <strong>NIRD : Numérique Inclusif, Responsable et Durable</strong>.
         </p>
-        <a href="#scenarios" id="startExperienceBtn" class="btn primary-btn" style="text-decoration: none;">
+        <a href="#scenarios" id="startExperienceBtn" class="btn primary-btn" style="text-decoration: none; margin-bottom: 35px;">
             Commencer l'expérience
         </a>
     </div>
@@ -30,30 +30,33 @@ include 'templates/header.php';
             Chaque lieu du village représente un pilier de la résistance numérique. 
             Clique sur les bâtiments pour découvrir les enjeux et solutions NIRD.
         </p>
+        <i style="font-size: 10px;">
+            Appuie sur chacune des lettres colorées (sans erreur de frappe 😉)
+        </i>
         
         <div class="village-map">
             <div class="village-building" data-building="materiel">
-                <h3>🔨 La Forge</h3>
+                <h3>🔨 La <span style="color: green;">F</span>orge</h3>
                 <p>Réemploi & Matériel</p>
             </div>
             
             <div class="village-building" data-building="logiciels">
-                <h3>📚 La Bibliothèque</h3>
+                <h3>📚 La <span style="color: green;">B</span>ibliothèque</h3>
                 <p>Logiciels Libres</p>
             </div>
             
             <div class="village-building" data-building="donnees">
-                <h3>🏛️ Le Grenier</h3>
+                <h3>🏛️ Le <span style="color: green;">G</span>renier</h3>
                 <p>Souveraineté des Données</p>
             </div>
             
             <div class="village-building" data-building="communs">
-                <h3>🏘️ La Place</h3>
+                <h3>🏘️ La <span style="color: green;">P</span>lace</h3>
                 <p>Communs Numériques</p>
             </div>
             
             <div class="village-building" data-building="sobriete">
-                <h3>🌿 L'Atelier du Druide</h3>
+                <h3>🌿 L'<span style="color: green;">A</span>telier du <span style="color: green;">D</span>ruide</h3>
                 <p>Sobriété Numérique</p>
             </div>
         </div>

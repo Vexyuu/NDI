@@ -5,7 +5,7 @@ include __DIR__ . '/../templates/header.php';
 ?>
 <div class="container">
     <header>
-      <img src="/NDI/assets/images/logo-decathlon.png" alt="Décathlon" style="height:60px; display:block; margin:auto;">
+      <img src="https://societeamission.com/wp-content/uploads/2020/09/logo-decathlon.png" alt="Décathlon1" style="height:60px; display:block; margin:auto;">
       <h1>Conseils personnalisés</h1>
       <p class="subtitle">Instructions, illustrations et produits</p>
     </header>
