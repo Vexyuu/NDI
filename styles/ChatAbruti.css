@@ -1,4 +1,5 @@
 /* Chat'bruti styles */
+
 #chatabruti-icon {
     transition: transform 0.2s;
 }
@@ -44,14 +45,21 @@
     border-radius: 16px;
     max-width: 80%;
     word-break: break-word;
+    color: inherit !important;
 }
 .chatabruti-msg.user .bubble {
     background: #e0d7f7;
-    color: #333;
+    color: #111827 !important;
     margin-left: auto;
+}
+.chatabruti-msg.user .bubble * {
+    color: #111827 !important;
 }
 .chatabruti-msg.bot .bubble {
     background: #6c47a6;
-    color: #fff;
+    color: #e5e7eb !important;
     margin-right: auto;
+}
+.chatabruti-msg.bot .bubble * {
+    color: #e5e7eb !important;
 }

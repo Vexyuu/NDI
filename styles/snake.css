@@ -18,3 +18,25 @@ body {
     border: 3px solid #00ff88;
     box-shadow: 0 0 20px #00ff88;
 }
+
+#snakeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+}
+
+#snakeUI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.info {
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
