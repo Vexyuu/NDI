@@ -46,7 +46,7 @@ $result = $conn->query($sql);
     <button type="submit">🔍</button>
 </form>
 
-<div class="container">
+<div class="container-talent">
     <img src="" alt="">
 
 <?php
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
         echo '
-        <div class="card">
+        <div class="card-talent">
             <div class="content-card">
                 <img class="badge-verif" src="../assets/images/Verified_Gold.png" alt="Badge Compte Vérifié ">
                 <div class="info">
